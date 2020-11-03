@@ -4,7 +4,7 @@ import Cors from '@koa/cors'
 import koaBody from 'koa-body'
 import jwt from 'koa-jwt'
 import helmet from 'koa-helmet'
-
+import logger from 'koa-morgan'
 import routes from './Router'
 import { getToken } from 'middlewares'
 import { errorHandling } from 'helpers'
@@ -13,7 +13,7 @@ import { JWT_SECRET } from 'config'
 const app = new Koa()
 
 app.use(helmet())
-app.use(Logger())
+app.use(logger('dev'))
 
 app.use(
   Cors({
@@ -41,11 +41,8 @@ app.use(
     getToken
   }).unless({
     path: [
-      '/v1/users/login',
+      '/v1/auth/login',
       '/v1/users/signup',
-      '/v1/users/forget',
-      '/v1/users/reset',
-      '/public'
     ]
   })
 )

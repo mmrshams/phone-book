@@ -21,6 +21,10 @@ class BaseMongooseRepo extends baseRepo {
     return result.isDeleted ? null : result
   }
 
+  async findByEmail(email) {
+    return this.model.findOne({ email }).exec()
+  }
+
   async findOneByQuery (query, { select } = {}, checkDeleted = false) {
     if (checkDeleted) query.isDeleted = false
     let result = this.model.findOne(query)

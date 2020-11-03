@@ -18,4 +18,4 @@ export const BUCKET_TYPE = process.env.BUCKET_TYPE || 'firebase'
 export const URL_FRONT = process.env.URL_FRONT || 'localhost'
 export const EXPIRE_TIME = process.env.EXPIRE_TIME || '5d'
 // for mongodb
-export const connectionString = 'mongodb://localhost/koa--knex-mongo-boilerplate'
+export const connectionString = 'mongodb://localhost/phone-book'

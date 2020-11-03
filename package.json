@@ -53,6 +53,7 @@
     "koa-helmet": "^5.2.0",
     "koa-jwt": "^3.5.1",
     "koa-logger": "^3.2.0",
+    "koa-morgan": "^1.0.1",
     "koa-router": "^8.0.8",
     "koa-unless": "celsomarques/koa-unless#koa-v2",
     "mongoose": "^5.10.7",
